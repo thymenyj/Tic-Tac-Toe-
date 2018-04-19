@@ -37,5 +37,10 @@ public class Game {
             }
         }
 
+
     }
+
+//    public Tile win(int row1, int column1, int row2, int column2, int row2, int column2) {
+//        if (board[row1][column1] == Tile.CROSS && )
+//    }
 }
