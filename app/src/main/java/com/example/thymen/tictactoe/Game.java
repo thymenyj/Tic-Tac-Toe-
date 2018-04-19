@@ -6,7 +6,6 @@ import com.example.thymen.tictactoe.Tile;
 public class Game {
     final private int BOARD_SIZE = 3;
     private Tile[][] board;
-
     public Boolean playerOneTurn;  // true if player 1's turn, false if player 2's turn
     public int movesPlayed;
     public Boolean gameOver;
@@ -26,11 +25,12 @@ public class Game {
             return Tile.INVALID;
         }
         else {
-            if (playerOneTurn = true) {
+            if (playerOneTurn == true) {
                 board[row][column] = Tile.CROSS;
                 playerOneTurn = false;
                 return Tile.CROSS;
-            } else {
+            }
+            else {
                 board[row][column] = Tile.CIRCLE;
                 playerOneTurn = true;
                 return Tile.CIRCLE;

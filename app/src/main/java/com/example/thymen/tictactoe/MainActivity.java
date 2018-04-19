@@ -8,29 +8,62 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Game game;
+    Tile tile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         game = new Game();
+        TextView newtext = findViewById(R.id.message);
+        newtext.setText("Lets Play");
     }
 
     public void tileClicked(View view) {
-        int id = view.getId();
-        int row = view.getLayoutParams()
-        Tile tile = game.draw(row, column);
+        if (view.getId()==R.id.b1){
+            tile = game.draw(0, 0);
+        }
+        else if(view.getId()==R.id.b2) {
+            tile = game.draw(0, 1);
+        }
+        else if(view.getId()==R.id.b3) {
+            tile = game.draw(0, 2);
+        }
+        else if(view.getId()==R.id.b4) {
+            tile = game.draw(1, 0);
+        }
+        else if(view.getId()==R.id.b5) {
+            tile = game.draw(1, 1);
+        }
+        else if(view.getId()==R.id.b6) {
+            tile = game.draw(1, 2);
+        }
+        else if(view.getId()==R.id.b7) {
+            tile = game.draw(2, 0);
+        }
+        else if(view.getId()==R.id.b8) {
+            tile = game.draw(2, 1);
+        }
+        else if(view.getId()==R.id.b9) {
+            tile = game.draw(2, 2);
+        }
+
         switch(tile) {
             case CROSS:
-                final TextView textViewToChange = findViewById(R.id.message);
-                textViewToChange.setText(
-                        "The new text that I'd like to display now that the user has pushed a button.");
+                TextView cross = findViewById(view.getId());
+                cross.setText("X");
+                TextView newtextCross = findViewById(R.id.message);
+                newtextCross.setText("Player Two is now");
                 break;
             case CIRCLE:
-                // do something
+                TextView circle = findViewById(view.getId());
+                circle.setText("O");
+                TextView newtextCircle = findViewById(R.id.message);
+                newtextCircle.setText("Player One is now");
                 break;
             case INVALID:
-
+                TextView newtextInvalid = findViewById(R.id.message);
+                newtextInvalid.setText("Cannot chose this tile");
                 break;
         }
 
