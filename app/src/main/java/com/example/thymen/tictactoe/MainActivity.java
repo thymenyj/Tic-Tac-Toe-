@@ -70,5 +70,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resetClicked(View view) {
+        game = new Game();
+        TextView reset1 = findViewById(R.id.b1);
+        reset1.setText("");
+        TextView reset2 = findViewById(R.id.b2);
+        reset2.setText("");
+        TextView reset3 = findViewById(R.id.b3);
+        reset3.setText("");
+        TextView reset4 = findViewById(R.id.b4);
+        reset4.setText("");
+        TextView reset5 = findViewById(R.id.b5);
+        reset5.setText("");
+        TextView reset6 = findViewById(R.id.b6);
+        reset6.setText("");
+        TextView reset7 = findViewById(R.id.b7);
+        reset7.setText("");
+        TextView reset8 = findViewById(R.id.b8);
+        reset8.setText("");
+        TextView reset9 = findViewById(R.id.b9);
+        reset9.setText("");
     }
 }
