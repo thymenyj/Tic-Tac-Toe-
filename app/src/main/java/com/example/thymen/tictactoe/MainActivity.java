@@ -3,12 +3,24 @@ package com.example.thymen.tictactoe;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.GridLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     Game game;
     Tile tile;
+    GameState gameState;
+
+//    @Override
+//    protected void onSaveInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        outState.putSerializable("board", board);
+//    }
+//
+//    @Override
+//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+//        super.onRestoreInstanceState(savedInstanceState);
+//        serializable board = savedInstanceState.getSerializable("board";
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +79,18 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+        gameState = game.win();
+        switch(gameState) {
+
+            case PLAYER_ONE:
+                TextView playerOneWon = findViewById(R.id.message);
+                playerOneWon.setText("Player One Won!!");
+            case PLAYER_TWO:
+                TextView playerTwoWon = findViewById(R.id.message);
+                playerTwoWon.setText("Player Two Won!!");
+
+        }
+
     }
 
     public void resetClicked(View view) {
@@ -89,5 +113,7 @@ public class MainActivity extends AppCompatActivity {
         reset8.setText("");
         TextView reset9 = findViewById(R.id.b9);
         reset9.setText("");
+        TextView reset10 = findViewById(R.id.message);
+        reset10.setText("Lets Play");
     }
 }

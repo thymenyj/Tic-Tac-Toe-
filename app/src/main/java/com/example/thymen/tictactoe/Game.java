@@ -40,7 +40,64 @@ public class Game {
 
     }
 
-//    public Tile win(int row1, int column1, int row2, int column2, int row2, int column2) {
-//        if (board[row1][column1] == Tile.CROSS && )
-//    }
+    public GameState win() {
+        // check horizontaal win
+        if (board[0][0] == Tile.CROSS && board[0][1] == Tile.CROSS && board[0][2] == Tile.CROSS ) {
+            return GameState.PLAYER_ONE;
+        }
+        else if (board[1][0] == Tile.CROSS && board[1][1] == Tile.CROSS && board[1][2] == Tile.CROSS ) {
+            return GameState.PLAYER_ONE;
+        }
+        else if (board[2][0] == Tile.CROSS && board[2][1] == Tile.CROSS && board[2][2] == Tile.CROSS ) {
+            return GameState.PLAYER_ONE;
+        }
+        // check verticaal win
+        else if (board[0][0] == Tile.CROSS && board[1][0] == Tile.CROSS && board[2][0] == Tile.CROSS ) {
+            return GameState.PLAYER_ONE;
+        }
+        else if (board[0][1] == Tile.CROSS && board[1][1] == Tile.CROSS && board[2][1] == Tile.CROSS ) {
+            return GameState.PLAYER_ONE;
+        }
+        else if (board[0][2] == Tile.CROSS && board[1][2] == Tile.CROSS && board[2][2] == Tile.CROSS ) {
+            return GameState.PLAYER_ONE;
+        }
+        // check diagonaal win
+        else if (board[0][0] == Tile.CROSS && board[1][1] == Tile.CROSS && board[2][2] == Tile.CROSS ) {
+            return GameState.PLAYER_ONE;
+        }
+        else if (board[0][2] == Tile.CROSS && board[1][1] == Tile.CROSS && board[2][0] == Tile.CROSS ) {
+            return GameState.PLAYER_ONE;
+        }
+
+        // same for player 2
+        else if (board[0][0] == Tile.CIRCLE && board[0][1] == Tile.CIRCLE && board[0][2] == Tile.CIRCLE) {
+            return GameState.PLAYER_TWO;
+        }
+        else if (board[1][0] == Tile.CIRCLE && board[1][1] == Tile.CIRCLE && board[1][2] == Tile.CIRCLE) {
+            return GameState.PLAYER_TWO;
+        }
+        else if (board[2][0] == Tile.CIRCLE && board[2][1] == Tile.CIRCLE && board[2][2] == Tile.CIRCLE) {
+            return GameState.PLAYER_TWO;
+        }
+        // check verticaal win
+        else if (board[0][0] == Tile.CIRCLE && board[1][0] == Tile.CIRCLE && board[2][0] == Tile.CIRCLE) {
+            return GameState.PLAYER_TWO;
+        }
+        else if (board[0][1] == Tile.CIRCLE && board[1][1] == Tile.CIRCLE && board[2][1] == Tile.CIRCLE) {
+            return GameState.PLAYER_TWO;
+        }
+        else if (board[0][2] == Tile.CIRCLE && board[1][2] == Tile.CIRCLE && board[2][2] == Tile.CIRCLE) {
+            return GameState.PLAYER_TWO;
+        }
+        // check diagonaal win
+        else if (board[0][0] == Tile.CIRCLE && board[1][1] == Tile.CIRCLE && board[2][2] == Tile.CIRCLE) {
+            return GameState.PLAYER_TWO;
+        }
+        else if (board[0][2] == Tile.CIRCLE && board[1][1] == Tile.CIRCLE && board[2][0] == Tile.CIRCLE) {
+            return GameState.PLAYER_TWO;
+        }
+        else {
+            return GameState.IN_PROGRESS;
+        }
+    }
 }
